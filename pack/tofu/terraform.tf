@@ -3,6 +3,7 @@
 #  SPDX-License-Identifier: MIT
 
 terraform {
+  backend "s3" {}
   required_providers {
     apstra = {
       source = "Juniper/apstra"
