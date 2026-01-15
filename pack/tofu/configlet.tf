@@ -5,11 +5,11 @@
 resource "apstra_datacenter_configlet" "configlet" {
   blueprint_id = var.blueprint_id
   name         = var.name
-  condition    = "role in [\"spine\", \"leaf\"]"
+  condition    = "role in [\"superspine\", \"spine\", \"leaf\"]"
   generators   = [
     {
       config_style  = "junos"
-      section       = "top_level_hierarchical"
+      section       = "top_level_set_delete"
       template_text = "set forwarding-options hash-key family inet layer-4"
     },
   ]
